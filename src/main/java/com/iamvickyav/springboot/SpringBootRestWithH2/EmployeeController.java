@@ -18,6 +18,12 @@ public class EmployeeController {
 
     // Select, Insert, Delete, Update Operations for an Employee
 
+    @RequestMapping("/")
+    String Employee(){
+        return "SUCCESS";
+    }
+
+
     @RequestMapping(value = "/employee/{id}", method = RequestMethod.GET)
     Employee getEmployee(@PathVariable Integer id){
         return  employeeService.findById(id).get();
